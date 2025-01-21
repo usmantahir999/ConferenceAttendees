@@ -9,16 +9,19 @@ namespace ConferenceAttendees.Api.Controllers
     public class GendersController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
+        private readonly ILogger<GendersController> _logger;
 
-        public GendersController(ApplicationDbContext context)
+        public GendersController(ApplicationDbContext context, ILogger<GendersController> logger)
         {
             _context = context;
+            _logger = logger;
         }
 
         // GET: api/Genders
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Gender>>> GetGenders()
         {
+            _logger.LogWarning("test logs");
             return await _context.Genders.ToListAsync();
         }
 
