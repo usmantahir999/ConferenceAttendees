@@ -17,3 +17,4 @@ Nswag settings:
 C# client:-
 Namespace: ConferenceAttendees.MVC.Services.Base
 Output file path: D:\Old Machine Data\Old machine data\U-Demo\ConferenceAttendeesDemo\ConferenceAttendees.MVC\Services\Base\ServiceClient.cs
+SELECT system.text.json
