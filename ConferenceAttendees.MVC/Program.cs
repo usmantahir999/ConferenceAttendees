@@ -5,7 +5,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddScoped(sp => new HttpClient
 {
-    BaseAddress =new Uri("https://localhost:44312")
+    BaseAddress =new Uri("http://conferenceattendees.api:7038")
 });
 builder.Services.AddScoped<IClient, Client>();
 builder.Services.AddControllersWithViews();
