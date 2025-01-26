@@ -27,7 +27,8 @@ services:
     container_name: sql2
     hostname: mssql
     environment: 
-      - SA_PASSWORD="Str0ngPa$$word123"
+    # removing $ from password, because compose direct read have issue with it 
+      - SA_PASSWORD=Str0ngPassword123
       - ACCEPT_EULA=Y
     restart: unless-stopped
     ports:
