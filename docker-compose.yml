@@ -54,7 +54,7 @@ services:
       context: . 
       dockerfile: nginx/Dockerfile
     ports:
-      - "8083:8083"
+      - "44391:443"
     depends_on:
       - conferenceattendees.mvc
     networks:

@@ -18,3 +18,8 @@ C# client:-
 Namespace: ConferenceAttendees.MVC.Services.Base
 Output file path: D:\Old Machine Data\Old machine data\U-Demo\ConferenceAttendeesDemo\ConferenceAttendees.MVC\Services\Base\ServiceClient.cs
 SELECT system.text.json
+
+
+cd /mnt/d/CubivueRepository/OM/UD/ConferenceAttendeesDemo/nginx
+dir
+sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout api-cert.key -out api-cert.crt -config api-cert.conf -passin pass:P@ssword1

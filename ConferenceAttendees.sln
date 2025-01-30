@@ -11,6 +11,10 @@ Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-co
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nginx", "nginx", "{941C4B93-DF38-4492-ACD7-91E40F5C1EC6}"
 	ProjectSection(SolutionItems) = preProject
+		nginx\api-cert.conf = nginx\api-cert.conf
+		nginx\api-cert.crt = nginx\api-cert.crt
+		nginx\api-cert.key = nginx\api-cert.key
+		nginx\api-cert.pfx = nginx\api-cert.pfx
 		nginx\Dockerfile = nginx\Dockerfile
 		nginx\nginx.conf = nginx\nginx.conf
 	EndProjectSection
