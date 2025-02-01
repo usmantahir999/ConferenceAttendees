@@ -26,3 +26,9 @@ sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout api-cert.key -o
 sudo openssl pkcs12 -export -out api-cert.pfx -inkey api-cert.key -in api-cert.crt
 
 sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout mvc-cert.key -out mvc-cert.crt -config mvc-cert.conf -passin pass:P@ssword1
+sudo openssl pkcs12 -export -out mvc-cert.pfx -inkey mvc-cert.key -in mvc-cert.crt
+
+// for plain sql scripts
+Script-Migration -Idempotent
+
+docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=Str0ngPa$$word123' -p 1444:1433 -d mcr.microsoft.com/mssql/server
