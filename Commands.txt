@@ -41,3 +41,19 @@ docker commit -m "Attendee Default Database Created" -a "ConferenceAttendeeDb" i
 Run continer with our own image
 
 docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=Str0ngPassword123" -p 1444:1433 -d utahir604/conferenceattendeedb
+
+docker push utahir604/conferenceattendeedb:latest
+docker pull utahir604/conferenceattendeedb:latest
+
+Update an image and set new version:
+
+
+docker run --name "TagTesting" -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=Str0ngPassword123" -p 1445:1433 -d utahir604/conferenceattendeedb
+docker commit -m "Added Gender to Attendee Database" -a "ConferenceAttendeeDb" TagTesting utahir604/conferenceattendeedb:1.0-alpha
+docker push utahir604/conferenceattendeedb:1.0-alpha
+
+after changes now this is the latest one:
+
+docker commit -m "Added Gender to Attendee Database" -a "ConferenceAttendeeDb" TagTesting utahir604/conferenceattendeedb:latest
+docker push utahir604/conferenceattendeedb:latest
+
