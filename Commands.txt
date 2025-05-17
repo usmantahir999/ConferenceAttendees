@@ -1,6 +1,6 @@
 
 docker pull mcr.microsoft.com/mssql/server
-docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=Str0ngPa$$word123' -p 1400:1433 -d mcr.microsoft.com/mssql/server
+docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=Str0ngPassword123' -p 1400:1433 -d mcr.microsoft.com/mssql/server
 
 // accept_eula means end user license agreement
 connection: localhost, 1400
@@ -31,4 +31,13 @@ sudo openssl pkcs12 -export -out mvc-cert.pfx -inkey mvc-cert.key -in mvc-cert.c
 // for plain sql scripts
 Script-Migration -Idempotent
 
-docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=Str0ngPa$$word123' -p 1444:1433 -d mcr.microsoft.com/mssql/server
+Create custom image:
+
+docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=Str0ngPassword123" -p 1444:1433 -d mcr.microsoft.com/mssql/server:latest
+
+//intelligent_roentgen is reandom assigned by docker
+docker commit -m "Attendee Default Database Created" -a "ConferenceAttendeeDb" intelligent_roentgen utahir604/conferenceattendeedb
+
+Run continer with our own image
+
+docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=Str0ngPassword123" -p 1444:1433 -d utahir604/conferenceattendeedb
