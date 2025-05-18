@@ -57,3 +57,6 @@ after changes now this is the latest one:
 docker commit -m "Added Gender to Attendee Database" -a "ConferenceAttendeeDb" TagTesting utahir604/conferenceattendeedb:latest
 docker push utahir604/conferenceattendeedb:latest
 
+Run compose file against specific environment:
+docker-compose -f docker-compose.yml -f docker-compose.staging.yml up -d
+
