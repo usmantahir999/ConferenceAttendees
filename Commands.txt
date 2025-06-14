@@ -77,3 +77,6 @@ kubectl -n kubernetes-dashboard create token admin-user (this command will give 
 Helm setup in one link: https://gist.github.com/trevoirwilliams/6f15322b35f4e407643006771dfe2694#file-kube-admin-dashboard-md
 
 kubectl apply -f .\namespace.yml
+kubectl apply -f .\mssql-deployment.yaml
+kubectl get all
+kubectl get all --namespace=cloud-native-dev
